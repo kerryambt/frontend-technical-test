@@ -5,6 +5,15 @@ import useData from '../useData';
 
 jest.mock('../useData');
 
+const mockResults = [
+  {
+    media: [
+      { url: "" },
+      { url: "" },
+    ]
+  }
+];
+
 describe('<VehicleList /> Tests', () => {
   it('Should show loading state if it not falsy', () => {
     useData.mockReturnValue([true, 'An error occurred', 'results']);
@@ -25,7 +34,7 @@ describe('<VehicleList /> Tests', () => {
   });
 
   it('Should show results if loading successfully finished', () => {
-    useData.mockReturnValue([false, false, 'results']);
+    useData.mockReturnValue([false, false, mockResults]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId('loading')).toBeNull();

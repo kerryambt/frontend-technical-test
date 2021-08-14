@@ -1,5 +1,18 @@
-.root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+body { 
+  margin: 0;
 }
+
+.root {
+  margin: 0px;
+  padding: 0px;
+  z-index: 12;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+@media (min-width: 600px) {
+  .root {
+    letter-spacing: 0.15rem;
+  }
+}
+
